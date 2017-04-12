@@ -1,1 +1,23 @@
 <!-- Create your form here -->
+
+<h1>New Student Form Page</h1>
+
+<%= form_tag students_path do %>
+<!-- above line needs to be: form_tag '/students'
+or students_path (as in, resources :students)
+not student_path(@student)... that redirect is set in the controller action -->
+
+  <label>Student first_name:</label><br>
+  <%= text_field_tag :first_name %><br>
+  <!-- above line can be :first_name or 'first_name' -->
+
+
+  <label>Student last_name:</label><br>
+  <%= text_field_tag :last_name %><br>
+  <!-- above line can be :last_name or 'last_name' -->
+
+
+  <%= submit_tag "Submit Student" %>
+  <% end %>
+
+  <%= params.inspect %>
